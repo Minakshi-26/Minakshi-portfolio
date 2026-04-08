@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minakshi Soni | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+nav {
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
+  background:#020617;
+  position:sticky;
+  top:0;
+}
+
+nav h2 { color:#38bdf8; }
+
+nav a {
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+}
+
+.hero {
+  text-align:center;
+  padding:80px 20px;
+}
+
+.hero h1 { font-size:42px; }
+
+.hero span { color:#38bdf8; }
+
+.typing {
+  margin-top:10px;
+  color:#94a3b8;
+}
+
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 20px;
+  background:#38bdf8;
+  color:black;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+section {
+  padding:60px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+h2 {
+  margin-bottom:20px;
+  color:#38bdf8;
+}
+
+.card {
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:15px;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+}
+
+.skills span {
+  display:inline-block;
+  background:#38bdf8;
+  color:black;
+  padding:8px 12px;
+  border-radius:5px;
+  margin:5px;
+}
+
+footer {
+  text-align:center;
+  padding:20px;
+  background:#020617;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>Minakshi</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#qa">QA</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Hi, I'm <span>Minakshi Soni</span> 👋</h1>
+  <div class="typing" id="typing"></div>
+  <a href="resume.pdf" class="btn">Download Resume</a>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>Motivated fresher with hands-on experience in Python backend development and manual testing. Strong understanding of APIs, databases, and real-world project development. Eager to contribute and grow in a professional tech environment.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>Python</span>
+    <span>Flask</span>
+    <span>REST APIs</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>MySQL</span>
+    <span>GitHub</span>
+    <span>Manual Testing</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>Expense Tracker (Flask)</h3>
+    <p>• Developed a full-stack expense management system with secure login<br>
+       • Implemented CRUD operations and database integration<br>
+       • Deployed live application and handled backend APIs</p>
+  </div>
+
+  <div class="card">
+    <h3>JobFinder Platform</h3>
+    <p>• Built responsive job search platform with filtering features<br>
+       • Integrated frontend with backend database<br>
+       • Improved user experience with structured UI</p>
+  </div>
+
+</section>
+
+<section id="qa">
+  <h2>QA / Testing Skills</h2>
+  <div class="card">
+    <p>• Manual Testing (Functional Testing, UI Testing)<br>
+       • Bug Reporting & Documentation<br>
+       • Basic Test Case Writing<br>
+       • Understanding of SDLC & STLC</p>
+  </div>
+</section>
+
+<section>
+  <h2>Training</h2>
+  <div class="card">
+    <p>Java Full Stack Training - Wipro TalentNext<br>
+    Hands-on experience with frontend, backend, and database integration.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: minakshiavinashsoni2628@gmail.com</p>
+    <p>Phone: 7999421353</p>
+    <p>GitHub: add-your-link</p>
+    <p>LinkedIn: add-your-link</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Minakshi Soni | Portfolio</p>
+</footer>
+
+<script>
+const text = ["Python Developer", "Backend Enthusiast", "QA Tester"];
+let i = 0, j = 0, current = "", isDeleting = false;
+
+function type() {
+  current = text[i];
+  
+  if (!isDeleting) {
+    document.getElementById("typing").innerHTML = current.substring(0, j++);
+    if (j > current.length) {
+      isDeleting = true;
+      setTimeout(type, 1000);
+      return;
+    }
+  } else {
+    document.getElementById("typing").innerHTML = current.substring(0, j--);
+    if (j === 0) {
+      isDeleting = false;
+      i = (i + 1) % text.length;
+    }
+  }
+  setTimeout(type, isDeleting ? 50 : 100);
+}
+
+type();
+</script>
+
+</body>
+</html>
